@@ -1,11 +1,182 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro"
 ---
+<Layout title="Clerk + Astro">
+  <div class="flex overflow-hidden flex-col bg-white">
 
-<Layout>
-	<Welcome />
+    <main class="flex overflow-hidden flex-col justify-center items-center self-center pt-11 w-full font-semibold bg-white max-md:max-w-full">
+      <h1 class="text-6xl tracking-tighter leading-tight text-center text-slate-600 max-md:max-w-full max-md:text-4xl">
+        The Death of Opaque Investing
+      </h1>
+      <div class="flex max-w-full min-h-[28px] w-[718px]"></div>
+      <p class="text-xl leading-8 text-center text-slate-600 w-[744px] max-md:max-w-full">
+      
+          The Venture Index from bckers brings a transparent view into how funds operate, enabling you to make smarter, more fair & ethical investments while increasing your potential multiples.
+        
+      </p>
+      <div class="flex max-w-full min-h-[28px] w-[718px]"></div>
+      
+      <form class="flex gap-4 items-start max-w-full w-[114px]" aria-label="Sign up form">
+        <button type="submit" class="flex overflow-hidden gap-1.5 justify-center items-center px-5 py-3 bg-blue-700 text-white rounded-lg border-2 border-solid shadow-sm border-white border-opacity-10 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          Sign-up
+        </button>
+      </form>
+
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecd594b0fe7d12cd49a9846f17196a2ceb171cf3785fa7abc0b5337bbf65e665?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Platform Interface Preview" class="object-contain w-full rounded-none aspect-[3.05] max-md:max-w-full" />
+    </main>
+
+    <!-- Value Proposition Section -->
+    <section class="flex flex-col justify-center px-48 py-16 bg-slate-200 max-md:px-5" role="region" aria-label="Value Proposition and Benefits">
+      <div class="flex flex-wrap gap-6 items-start self-center mt-11 max-w-full w-[1064px] max-md:mt-10">
+        <h2 class="gap-2.5 self-stretch w-full text-4xl font-semibold tracking-tighter leading-10 text-slate-600 max-md:max-w-full">
+          Value Proposition<br> and Benefits
+        </h2>
+        <div class="flex flex-col grow shrink justify-center items-center py-10 bg-white min-h-[447px] min-w-[240px] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[274px]" tabindex="0">
+          <h3 class="text-2xl font-semibold leading-none text-slate-600">
+            Proprietary Score
+          </h3>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/13ad059c18bf8a94c7abc824dfff9efee8dcf01bbb51c2fcee7fbca80ffff39c?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Visual representation of the VC Index Score system" class="object-contain mt-10 max-w-full aspect-[1.36] w-[300px] max-md:mt-10"/>
+          <p class="mt-10 text-sm leading-5 text-slate-600 w-[278px] max-md:mt-10">
+            The VC Index Score gives an objective, comparative measure of funds.
+          </p>
+        </div>
+        <div class="flex flex-col grow shrink justify-center items-center px-6 py-7 bg-white min-h-[447px] min-w-[240px] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[274px] max-md:px-5" tabindex="0">
+          <h3 class="text-2xl font-semibold leading-7 text-slate-600">
+            Empowering Decision-Makers
+          </h3>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/264cb9c7c61c97b3a061997d0f203b8269e6a648993f71ce955bec29bbf855f4?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Illustration of decision-makers using analytics tools" class="object-contain mt-6 max-w-full aspect-[1.28] w-[298px]"/>
+          <p class="mt-6 text-sm leading-5 text-slate-600">
+            Equip LPs, GPs, and founders with actionable analytics for better investment outcomes.
+          </p>
+        </div>
+        <div class="flex flex-col grow shrink justify-center items-center py-7 bg-white min-h-[447px] min-w-[240px] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[274px]" tabindex="0">
+          <h3 class="text-2xl font-semibold leading-none text-slate-600">
+            Promoting Equity
+          </h3>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5811e32c1bb4608f76a88b648145a2fc10876e4647461ecac16125ccc6075c65?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Representation of diversity and inclusion in venture capital" class="object-contain mt-16 max-w-full aspect-[1.73] w-[305px] max-md:mt-10"/>
+          <p class="mt-16 text-sm leading-5 text-slate-600 w-[278px] max-md:mt-10">
+            We're helping to close the funding gap by fostering diversity and accountability in venture capital.
+          </p>
+        </div>
+        <div class="flex flex-col grow shrink items-center px-2.5 pt-5 pb-9 bg-white min-h-[447px] min-w-[240px] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[274px]" tabindex="0">
+          <h3 class="text-2xl font-semibold leading-7 text-slate-600">
+            Driving higher potential returns
+          </h3>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d7c941a2cab7d1f760f835f69747c77b2ca7038f1a62ead5460e3e0a97f8ae83?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Graph showing correlation between diversity and returns" class="object-contain mt-9 w-80 max-w-full aspect-[1.57]"/>
+          <p class="mt-9 text-sm leading-5 text-slate-600">
+            Diverse teams have higher returns - we provide the best view into which funds are set up for strong returns.
+          </p>
+        </div>
+        <div class="flex flex-col grow shrink justify-center items-center px-8 py-10 bg-white min-h-[447px] min-w-[240px] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[274px] max-md:px-5" tabindex="0">
+          <h3 class="text-2xl font-semibold leading-7 text-slate-600">
+            Invest with Confidence:
+          </h3>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/040850f57e011e30588e332f68a628a3309908e68fda5b9c36d7e6015946f1a6?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Investment confidence visualization" class="object-contain mt-5 max-w-full aspect-[0.87] w-[203px]"/>
+          <p class="mt-5 text-sm leading-5 text-slate-600">
+            Know exactly where your money is going and how it's being put to work.
+          </p>
+        </div>
+        <div class="flex flex-col grow shrink justify-center items-center px-8 py-7 bg-white min-h-[447px] min-w-[240px] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[274px] max-md:px-5" tabindex="0">
+          <h3 class="text-2xl font-semibold leading-none text-slate-600">
+            Extra options
+          </h3>
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f52851ebf121faed46b60b037f0783a96e29fe6c144dede799a78d52bb0e3eb0?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Additional features and capabilities illustration" class="object-contain mt-9 max-w-full aspect-[0.87] w-[191px]"/>
+          <p class="mt-9 text-sm leading-5 text-slate-600">
+            AI-Powered Precision<br/>
+            Data-Driven Insights<br/>
+            Streamlined Fundraising:
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="cta-section" class="flex flex-col justify-center items-center py-32 max-md:py-24">
+      <div class="flex flex-wrap -mb-16 z-20 gap-10 items-center px-20  max-w-full bg-white min-h-[401px] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[1058px] max-md:px-5">
+        <div class="flex flex-col grow shrink self-stretch my-auto min-w-[240px] w-[222px]">
+          <div class="text-2xl font-semibold leading-7 text-slate-600">Register For Venture Index</div>
+          <div class="flex flex-col mt-28 w-full max-w-[278px] max-md:mt-10">
+            <div class="text-sm leading-5 text-slate-600">Ready to explore the VC Score Index? Register now for early adopter access and to see our initial data on funds that we've scored</div>
+            <button class="flex overflow-hidden gap-1.5 justify-center items-center self-start px-5 py-3 mt-5 text-base font-semibold text-white whitespace-nowrap bg-blue-700 rounded-lg border-2 border-solid shadow-sm border-white border-opacity-10" tabindex="0">
+              <span class="self-stretch px-0.5 my-auto">Product</span>
+            </button>
+          </div>
+        </div>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/80284c885c6c4ab1f5d10c9b2d12ddc86b36b763059f739abe2fb4dfccda95b4?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Venture Index Registration Visual" class="object-contain grow shrink self-stretch my-auto aspect-[0.98] min-w-[240px] w-[200px] pb-6" />
+      </div>
+      <div class="flex gap-2.5 items-end self-stretch px-1 pt-28 pb-px w-full text-2xl leading-none text-white bg-lime-600 min-h-[610px] max-md:pt-24 max-md:max-w-full">
+        <div class="flex flex-col items-start min-w-[240px] w-[1058px] mx-auto">
+          <div class="flex relative flex-col items-start px-20 pt-16 pb-36 max-w-full min-h-[504px] w-full max-md:pb-24 max-md:pl-5">
+            <!-- <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/203669f3d25f64b75afb14b2f365081ee15f6ac57ce8220399c951495815e71c?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="CEO Portrait" class="flex object-contain absolute inset-0 size-full" /> -->
+            <div class="flex relative flex-col -mr-16 mb-0 max-md:mb-2.5 max-w-md max-md:max-w-full">
+              <h2 class="text-5xl max-md:max-w-full max-md:text-4xl">Hear from our CEO</h2>
+              <p class="mt-11 leading-7 max-md:mt-10 max-md:max-w-full text-lg">bckers exists to rebuild trust in an opaque system. By introducing transparency and accountability, we're reshaping the way capital flows and empowering everyone in the Funder-Founder ecosystem</p>
+              <p class="mt-11 font-bold max-md:mt-10 max-md:max-w-full">Amos Winbush III, Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap gap-10 items-center -mt-16 pt-6 px-20 max-w-full bg-white min-h-[401px] rounded-[34px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-[1058px] max-md:px-5">
+        <div class="flex flex-col grow shrink self-stretch my-auto min-w-[240px] w-[222px]">
+          <h3 class="text-2xl font-semibold leading-none text-slate-600">VC Claim Your Profile</h3>
+          <div class="flex flex-col mt-24 w-full max-md:mt-10">
+            <p class="text-sm leading-5 text-slate-600">Are you a venture firm looking to showcase your impact? Claim your profile today to ensure your firm is accurately represented and seen by the decision-makers who matter.</p>
+            <button class="flex overflow-hidden gap-1.5 justify-center items-center self-start px-5 py-3 mt-9 text-base font-semibold text-white bg-blue-700 rounded-lg border-2 border-solid shadow-sm border-white border-opacity-10" tabindex="0">
+              <span class="self-stretch px-0.5 my-auto">Claim Now</span>
+            </button>
+          </div>
+        </div>
+        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/07d80419759b75049d785e2d152087aa52456bccb411f1ac4953ab5ba649c9eb?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="VC Profile Management Interface" class=" pt-8 object-contain grow shrink self-stretch my-auto aspect-[1.31] min-w-[240px] w-[419px] max-md:max-w-full" />
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="flex overflow-hidden relative flex-col items-center py-24 w-full bg-white max-md:max-w-full">
+      <div class="flex absolute inset-x-0 bottom-0 z-0 w-full bg-slate-100 min-h-[202px] top-[202px] max-md:max-w-full"></div>
+      <div class="flex z-0 flex-col self-center px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
+        <form class="flex flex-wrap gap-8 items-start p-16 w-full rounded-2xl shadow-xl bg-slate-200 max-md:px-5 max-md:max-w-full" aria-label="Contact form">
+          <div class="flex flex-col flex-1 shrink max-w-screen-md basis-0 min-w-[320px] text-slate-600 max-md:max-w-full">
+            <h2 class="text-3xl font-semibold leading-none max-md:max-w-full">Connect with Us Today!</h2>
+            <p class="mt-4 text-xl max-md:max-w-full">Subheadline about connecting and leaving email.</p>
+          </div>
+          <div class="flex gap-3 items-start text-base font-semibold min-w-[240px]">
+            <label for="email" class="sr-only">Enter your email</label>
+            <input type="email" id="email" class="px-5 py-3 bg-white rounded-lg border border-gray-300 border-solid shadow-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter Email Here" required />
+            <button type="submit" class="flex overflow-hidden gap-1.5 justify-center items-center px-5 py-3 text-white whitespace-nowrap bg-blue-700 rounded-lg border-2 border-solid shadow-sm border-white border-opacity-10 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="flex overflow-hidden flex-col items-center pt-5 pb-14 w-full bg-slate-100 min-h-[326px] max-md:max-w-full">
+      <div class="flex flex-col px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
+        <div class="flex gap-8 items-start w-full max-md:max-w-full">
+          <div class="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px] max-md:max-w-full">
+            <div class="flex flex-col w-80 max-w-full text-base text-black">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d5e06227f846017a5b1dbbe21e3ddd01c425761e193c344874aebdb66e0b36e3?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Company Logo Footer" class="object-contain max-w-full aspect-[7.94] w-[174px]" />
+              <p class="mt-8">Transparency, Access, Trust</p>
+            </div>
+            <nav class="flex flex-wrap gap-8 items-center mt-8 w-full max-md:max-w-full" aria-label="Footer navigation">
+              <a href="#" class="text-base font-semibold text-black hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">About</a>
+              <a href="#" class="text-base font-semibold text-black hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Product</a>
+              <a href="#" class="text-base font-semibold text-black hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Signup</a>
+              <a href="#" class="text-base font-semibold text-black hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Login</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col px-8 mt-16 w-full max-w-screen-xl max-md:px-5 max-md:mt-10 max-md:max-w-full">
+        <div class="flex flex-wrap gap-6 justify-between items-center pt-8 w-full border-t border-solid border-t-gray-800 max-md:max-w-full">
+          <p class="text-base text-black">© 2024 bckers, Inc. All rights reserved.</p>
+          <div class="flex gap-6 items-center">
+            <span class="w-6 h-6"></span>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/102ac26e4c0cd09da1353526f51856f7480a59496e1a7534a1ecc28ac9ca5376?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Social Media Icon" class="w-6 h-6" />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
 </Layout>

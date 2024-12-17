@@ -1,0 +1,220 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCompanyByUrlPath } from "../data/companies"; 
+import { supabase } from "../lib/supabase";
+
+// Get company data based on URL parameter
+const { company } = Astro.params;
+const companyData = company ? getCompanyByUrlPath(company) : undefined;
+
+const accessToken = Astro.cookies.get("sb-access-token");
+const refreshToken = Astro.cookies.get("sb-refresh-token");
+
+if (!accessToken || !refreshToken) {
+  return Astro.redirect("/signin");
+}
+
+let session;
+try {
+  session = await supabase.auth.setSession({
+    refresh_token: refreshToken.value,
+    access_token: accessToken.value,
+  });
+  if (session.error) {
+    Astro.cookies.delete("sb-access-token", {
+      path: "/",
+    });
+    Astro.cookies.delete("sb-refresh-token", {
+      path: "/",
+    });
+    return Astro.redirect("/signin");
+  }
+} catch (error) {
+  Astro.cookies.delete("sb-access-token", {
+    path: "/",
+  });
+  Astro.cookies.delete("sb-refresh-token", {
+    path: "/",
+  });
+  return Astro.redirect("/signin");
+}
+
+const email = session.data.user?.email;
+
+// Redirect or show error if company not found
+if (!companyData) {
+  return Astro.redirect('/404');
+}
+---
+
+<Layout title={`${companyData.name} Dashboard`}>
+    <main class="flex flex-col pt-12 pb-24 w-full max-md:pb-24 max-md:max-w-full">
+            <div class="flex flex-col items-center -mb-5 w-full max-md:mb-2.5 max-md:max-w-full">
+                <div class="flex flex-col items-center px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
+                    <div class="flex flex-col max-w-full w-[1151px]">
+                        <section class="flex flex-col w-full max-md:max-w-full">
+                            <div class="flex flex-col w-full min-h-[66px] max-md:max-w-full">
+                                <div class="flex gap-4 items-start w-full max-md:max-w-full">
+                                    <img 
+                                        loading="lazy" 
+                                        src={companyData.logo || "https://cdn.builder.io/api/v1/image/assets/TEMP/53b4f18ea19cbb40fe36a0cc0cf21e7b6f65e7983b86a06e92f2a1d6b21f8a2f"} 
+                                        alt={`${companyData.name} Logo`} 
+                                        class="object-contain shrink-0 w-14 shadow-sm aspect-square"
+                                    />
+                                    <div class="flex flex-col min-h-[66px] min-w-[320px] w-[1025px] max-md:max-w-full">
+                                        <h1 class="text-3xl font-semibold leading-none text-gray-900 max-md:max-w-full">Welcome, {companyData.name}</h1>
+                                        <p class="mt-1 text-base text-slate-600 max-md:max-w-full">Below is a summary of your score and how it reflects in the market</p>
+                                    </div>
+                                    <button class="flex gap-3 justify-center items-center text-sm font-semibold leading-none text-right whitespace-nowrap text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <div class="flex overflow-hidden gap-1 justify-center items-center self-stretch px-3.5 py-2.5 my-auto bg-white rounded-lg border border-gray-300 border-solid shadow-sm">
+                                            <div class="flex justify-center items-center self-stretch px-0.5 my-auto">
+                                                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9219791e5fe17e7be363f0fb745db1ad9405a0dfd8ed8cff7b5b52ba35bdb3f2?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"/><span class="self-stretch my-auto w-[47px]">Share</span>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="flex flex-col mt-6 w-full min-h-[540px] max-md:max-w-full">
+                            <h2 class="text-lg font-semibold leading-loose text-gray-900">Snapshot</h2>
+                            <div class="flex flex-wrap flex-1 gap-3 mt-6 size-full max-md:max-w-full">
+                                <div class="flex overflow-hidden flex-col justify-between items-center py-6 pr-7 pl-7 text-sm font-semibold leading-none bg-white rounded-xl border border-gray-200 border-solid shadow-sm min-w-[240px] text-slate-600 w-[340px] max-md:px-5">
+                                    <div class="flex flex-col w-full text-lg leading-loose text-gray-900 whitespace-nowrap max-w-[287px]">
+                                        <div class="flex gap-4 w-full">
+                                            <div class="flex-1 shrink w-full min-w-[240px]">Score</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex relative flex-col justify-center items-center px-16 py-20 mt-3.5 max-w-full text-center min-h-[238px] w-[238px] max-md:px-5">
+                                        <div class="z-0">VI Score</div>
+                                        <div class="flex absolute bottom-1 top-6 z-0 flex-col self-start pb-6 w-full left-[13px] max-w-[210px] right-[15px]">
+                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/778e1a6efec88c6d42354d949c88d543d5ca739257034fdd172f17fef7b1f975?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Score Graph" class="object-contain z-10 mt-0 w-full aspect-[1.34] max-md:-mr-1.5"/>
+                                            <div class="flex gap-5 justify-between mt-2">
+                                                <div>{companyData.vcScore.minScore}</div>
+                                                <div>{companyData.vcScore.maxScore}</div>
+                                            </div>
+                                        </div>
+                                        <div class="z-0 text-6xl tracking-tighter leading-none text-gray-900 max-md:text-4xl">{companyData.vcScore.score}</div>
+                                    </div>
+                                    <div class="flex flex-col justify-center mt-3.5 max-w-full text-xs font-normal leading-4 w-[280px]">
+                                        <div>
+                                            <span class="font-bold">Effectiveness:</span> {companyData.vcScore.metrics.effectiveness}
+                                        </div>
+                                        <div class="mt-2.5">
+                                            <span class="font-bold">Efficiency:</span> {companyData.vcScore.metrics.efficiency}
+                                        </div>
+                                        <div class="mt-2.5">
+                                            <span class="font-bold">Efficacy:</span> {companyData.vcScore.metrics.efficacy}
+                                        </div>
+                                    </div>
+                                    <button class="flex gap-3 items-center mt-3.5 max-w-full text-white w-[211px] focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <div class="flex overflow-hidden gap-1 justify-center items-center self-stretch px-3.5 py-2.5 my-auto bg-blue-700 rounded-lg w-[211px] hover:bg-blue-800">
+                                            <div class="self-stretch px-0.5 my-auto">View Insights</div>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="flex overflow-hidden flex-col justify-between items-center py-6 pr-7 pl-7 bg-white rounded-xl border border-gray-200 border-solid shadow-sm min-w-[240px] w-[340px] max-md:px-5">
+                                    <div class="flex flex-col w-full text-lg font-semibold leading-loose text-gray-900 whitespace-nowrap max-w-[287px]">
+                                        <div class="flex gap-4 w-full">
+                                            <div class="flex-1 shrink w-full min-w-[240px]">Grade</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-10 text-8xl font-semibold tracking-tighter leading-none text-center text-gray-900 max-md:text-4xl">{companyData.vcGrade.letter}</div>
+                                    <div class="flex flex-col items-start mt-10 max-w-full text-center rounded-none w-[244px]">
+                                        <div class="flex items-center gap-2.5 px-1 ml-16 h-4 text-xs font-bold leading-loose text-white whitespace-nowrap bg-fuchsia-600 rounded-sm max-md:ml-2.5">{companyData.vcGrade.score}</div>
+                                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/31d7f7ea41e29c4ffa5715a787fe7956a57fcaa986bdf5dbbc3524f67cdbd0dc?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Grade Distribution" class="object-contain mt-1.5 w-full aspect-[76.92] max-md:ml-1.5"/>
+                                        <div class="flex gap-5 justify-between self-stretch mt-2.5 text-sm font-semibold leading-none text-slate-600">
+                                            <div>{companyData.vcScore.minScore}</div>
+                                            <div>{companyData.vcScore.maxScore}</div>
+                                        </div>
+                                    </div>
+                                    <ul class="flex flex-col justify-center mt-10 max-w-full text-xs leading-4 text-slate-600 list-disc pl-4">
+                                        {companyData.vcGrade.details.map(detail => (
+                                            <li class="mt-2.5 list-item">{detail}</li>
+                                        ))}
+                                    </ul>
+                                    <button class="flex gap-3 items-center mt-10 max-w-full text-sm font-semibold leading-none text-white w-[211px] focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <div class="flex overflow-hidden gap-1 justify-center items-center self-stretch px-3.5 py-2.5 my-auto bg-blue-700 rounded-lg w-[211px] hover:bg-blue-800">
+                                            <div class="self-stretch px-0.5 my-auto">View Insights</div>
+                                        </div>
+                                    </button>
+                                </div>
+                                <div class="flex overflow-hidden flex-col justify-between items-center py-6 pr-7 pl-7 bg-white rounded-xl border border-gray-200 border-solid shadow-sm min-w-[240px] w-[340px] max-md:px-5">
+                                    <div class="flex flex-col w-full text-lg font-semibold leading-loose text-gray-900 whitespace-nowrap max-w-[287px]">
+                                        <div class="flex gap-4 w-full">
+                                            <div class="flex-1 shrink w-full min-w-[240px]">Metrics</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col gap-2 justify-center min-h-[285px] mt-12 pt-5 w-full max-md:mt-10">
+                                        {Object.entries(companyData.vcMetrics).map(([key, value]) => (
+                                            <div class="flex gap-4 items-start w-full">
+                                                <div class="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px]">
+                                                    <div class="text-sm font-medium leading-none text-slate-700">{key.charAt(0).toUpperCase() + key.slice(1)}</div>
+                                                    <div class="flex gap-3 items-center w-full">
+                                                        <div class="flex flex-col flex-1 shrink self-stretch my-auto rounded-lg basis-0 min-w-[240px]">
+                                                            <div class="flex flex-col items-start bg-gray-200 rounded max-md:pr-5">
+                                                                <div class="flex shrink-0 h-2 bg-blue-700 rounded" style={`width: ${value}%`}></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="self-stretch my-auto text-sm font-medium leading-none text-slate-700">{value}%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <button class="flex gap-3 items-center mt-12 max-w-full text-sm font-semibold leading-none text-white w-[211px] max-md:mt-10 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <div class="flex overflow-hidden gap-1 justify-center items-center self-stretch px-3.5 py-2.5 my-auto bg-blue-700 rounded-lg w-[211px] hover:bg-blue-800">
+                                            <div class="self-stretch px-0.5 my-auto">View Insights</div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+                        <button aria-label="Filter Results" class="flex overflow-hidden gap-1 justify-center items-center self-start px-3.5 py-2.5 mt-6 text-sm font-semibold leading-none whitespace-nowrap bg-white rounded-lg border border-gray-300 border-solid shadow-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:bg-gray-50">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f429fc70ccdb051d86c66ca822a577bc39f4a97200b150536701ae1d23b3d475?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/>
+                            <div class="self-stretch px-0.5 my-auto">Filters</div>
+                        </button>
+                        <section class="flex flex-col mt-6 w-full min-w-[320px] max-md:max-w-full">
+                            <div class="flex flex-wrap gap-6 items-start w-full max-md:max-w-full">
+                                <h2 class="flex-1 shrink text-lg font-medium leading-loose text-gray-900 min-w-[240px] max-md:max-w-full">Standard for Index Scoring:</h2>
+                                <button aria-label="More Information" class="flex flex-col pt-0.5 w-6 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cc360b90695e4af4615a5f645d4be1ec9eb5960d6963c3599886fd9c9ef14b60?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="" class="object-contain w-6 aspect-square"/>
+                                </button>
+                            </div>
+                        </section>
+                        <section class="flex flex-col pt-6 mt-6 w-full border-t border-solid border-t-gray-200 min-w-[320px] max-md:max-w-full">
+                            <div class="flex flex-wrap gap-6 items-start w-full max-md:max-w-full">
+                                <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px] max-md:max-w-full">
+                                    <h2 class="text-lg font-medium leading-loose text-gray-900 max-md:max-w-full">VC Metrics Insights</h2>
+                                    <p class="mt-2 text-base leading-6 text-slate-600 max-md:max-w-full">
+                        Yes, you can try us for free for 30 days. If you want, we'll provide you with a free, personalized 30-minute onboarding call to get you up and running as soon as possible. </p>
+                                </div>
+                                <button aria-label="More Information" class="flex flex-col pt-0.5 w-6 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a3468ddc60b7d4e9be06eb5020202ec1049c00548609c5589da3a8b28e51bfb?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="" class="object-contain w-6 aspect-square"/>
+                                </button>
+                            </div>
+                        </section>
+                        <section class="flex flex-col mt-6 w-full max-md:max-w-full">
+                            <div class="flex flex-wrap gap-6 items-start w-full max-md:max-w-full">
+                                {Object.entries(companyData.insights).map(([key, insight]) => (
+                                    <article class="flex relative flex-col flex-1 shrink py-6 pr-0.5 pl-6 bg-white rounded-xl border border-gray-200 border-solid shadow-sm basis-[22px] min-h-[294px] min-w-[312px] max-md:pl-5">
+                                        <h3 class="z-0 text-base font-semibold text-gray-900">{insight.title}</h3>
+                                        <div class="flex z-0 flex-col flex-1 pr-10 mt-6 max-w-full w-[341px] max-md:pr-5">
+                                            <div class="text-xl font-semibold tracking-tight leading-10 text-blue-700">{insight.score}</div>
+                                            <p class="mt-4 text-sm font-medium leading-5 text-ellipsis text-slate-600">{insight.description}</p>
+                                        </div>
+                                    </article>
+                                ))}
+                            </div>
+                        </section>
+                        <section class="flex flex-col mt-6 max-w-full min-h-[124px] w-[819px]">
+                            <h2 class="text-lg font-medium leading-loose text-gray-900 max-md:max-w-full">{companyData.finalSummary.title}</h2>
+                            <p class="mt-2 text-base leading-6 text-slate-600 max-md:max-w-full">{companyData.finalSummary.content}</p>
+                        </section>
+                        <button class="overflow-hidden flex-1 shrink gap-2.5 self-stretch px-44 py-2.5 mt-20 text-sm font-semibold leading-none text-white bg-blue-700 rounded-lg max-w-2xl mx-auto max-md:px-5 max-md:mt-10 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            Claim VC Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </main>
+</Layout>
