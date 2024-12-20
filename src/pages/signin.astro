@@ -12,10 +12,10 @@ if (accessToken && refreshToken) {
 ---
 
 <Layout title="Sign in">
-  <main class="flex flex-col flex-1 justify-center items-center px-8 w-full max-md:px-5 max-md:max-w-full py-24">
-      <div class="flex flex-col max-w-[360px] w-[360px]">
+  <main class="flex flex-col flex-1 items-center px-8 w-full max-md:px-5 max-md:max-w-full py-24">
+      <div class="flex flex-col justify-center max-w-[360px] w-[360px]">
           <div class="flex flex-col w-full">
-              <h1 class="text-4xl font-semibold tracking-tighter leading-none text-gray-900">Log in</h1>
+              <h1 class="text-4xl font-semibold tracking-tighter leading-none text-gray-900">Sign in</h1>
               <p class="mt-3 text-base text-slate-600">Welcome back! Please enter your details.</p>
               <form action="/api/auth/signin" method="post" class="flex flex-col mt-8 w-full rounded-xl">
                   <div class="flex flex-col w-full">
@@ -36,11 +36,20 @@ if (accessToken && refreshToken) {
                       <button type="button" class="text-sm font-semibold text-violet-700 hover:text-violet-600 focus:outline-none focus:underline">Forgot password</button>
                   </div>
                   <button type="submit" class="flex justify-center items-center px-4 py-2.5 mt-6 w-full text-base font-semibold text-white bg-black rounded-lg border-2 border-solid shadow-sm hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">Sign in</button>
-                  
+                  <div class="flex flex-col gap-3 mt-4">
+                    <button type="button" class="flex justify-center items-center gap-3 px-4 py-2.5 w-full text-base font-semibold text-slate-700 bg-white rounded-lg border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-violet-500">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c5028b9181ef79842653fed23a73adcabeb93d224f65e0400231ead81100e2c?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" class="w-6 h-6" alt=""/>
+                        Sign in with Google
+                    </button>
+                    <button type="button" class="flex justify-center items-center gap-3 px-4 py-2.5 w-full text-base font-semibold text-slate-700 bg-white rounded-lg border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-violet-500">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c725e04dadb8988355bdef7d9090d93d0706880f1d0d57d8668b197673bec0b?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" class="w-[22px] h-[22px]" alt=""/>
+                        Sign in with LinkedIn
+                    </button>
+                 </div>
               </form>
               <div class="flex justify-center gap-1 mt-8 text-sm leading-none">
                   <span class="text-slate-600">Don't have an account?</span>
-                  <a href="/register" class="font-semibold text-violet-700 hover:text-violet-600 focus:outline-none focus:underline">Sign up</a>
+                  <a href="/signup" class="font-semibold text-violet-700 hover:text-violet-600 focus:outline-none focus:underline">Sign up</a>
               </div>
           </div>
       </div>
