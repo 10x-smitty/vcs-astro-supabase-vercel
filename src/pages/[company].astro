@@ -48,18 +48,18 @@ if (!companyData) {
 ---
 
 <Layout title={`${companyData.name} Dashboard`}>
-    <main class="flex flex-col pt-12 pb-24 w-full max-md:pb-24 max-md:max-w-full">
+    <main class="flex flex-col pt-12 pb-24 w-full max-md:pb-24 max-md:max-w-full bg-gray-50">
             <div class="flex flex-col items-center -mb-5 w-full max-md:mb-2.5 max-md:max-w-full">
                 <div class="flex flex-col items-center px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
                     <div class="flex flex-col max-w-full w-[1151px]">
                         <section class="flex flex-col w-full max-md:max-w-full">
                             <div class="flex flex-col w-full min-h-[66px] max-md:max-w-full">
-                                <div class="flex gap-4 items-start w-full max-md:max-w-full">
+                                <div class="flex gap-4 items-start w-full max-md:max-w-full p-1.5">
                                     <img 
                                         loading="lazy" 
-                                        src={companyData.logo || "https://cdn.builder.io/api/v1/image/assets/TEMP/53b4f18ea19cbb40fe36a0cc0cf21e7b6f65e7983b86a06e92f2a1d6b21f8a2f"} 
+                                        src={companyData.logo || "/companyIcon.svg"} 
                                         alt={`${companyData.name} Logo`} 
-                                        class="object-contain shrink-0 w-14 shadow-sm aspect-square"
+                                        class={`object-contain shrink-0 w-14 shadow-sm aspect-square ${companyData.logo ? 'p-1.5 rounded-lg border border-gray-300' : ''}`}
                                     />
                                     <div class="flex flex-col min-h-[66px] min-w-[320px] w-[1025px] max-md:max-w-full">
                                         <h1 class="text-3xl font-semibold leading-none text-gray-900 max-md:max-w-full">Welcome, {companyData.name}</h1>
@@ -67,7 +67,7 @@ if (!companyData) {
                                     </div>
                                     <button class="flex gap-3 justify-center items-center text-sm font-semibold leading-none text-right whitespace-nowrap text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                                         <div class="flex overflow-hidden gap-1 justify-center items-center self-stretch px-3.5 py-2.5 my-auto bg-white rounded-lg border border-gray-300 border-solid shadow-sm">
-                                            <div class="flex justify-center items-center self-stretch px-0.5 my-auto">
+                                            <div class="flex justify-center items-center  gap-2 self-stretch px-0.5 my-auto">
                                                 <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9219791e5fe17e7be363f0fb745db1ad9405a0dfd8ed8cff7b5b52ba35bdb3f2?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"/><span class="self-stretch my-auto w-[47px]">Share</span>
                                             </div>
                                         </div>

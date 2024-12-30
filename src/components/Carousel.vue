@@ -12,8 +12,8 @@
               <div class="px-6 pt-6 w-full max-md:px-5 max-md:max-w-full">
                 <div class="flex max-md:flex-col">
                   <div class="flex flex-col w-[17%] max-md:ml-0 max-md:w-full">
-                    <div class="flex overflow-hidden flex-col justify-center items-center  mx-auto w-14 h-14 bg-white rounded-xl shadow-sm max-md:mt-10">
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/53b4f18ea19cbb40fe36a0cc0cf21e7b6f65e7983b86a06e92f2a1d6b21f8a2f" :alt="`${company.name} logo`" class="object-contain aspect-[3.92] h-full w-auto"/>
+                    <div class="flex overflow-hidden flex-col justify-center items-center  mx-auto w-14 h-14 bg-white rounded-xl shadow-sm max-md:mt-10" :class="{ 'border border-gray-300 p-1': company.logo }">
+                      <img :src="company.logo || '/companyIcon.svg'" :alt="`${company.name} logo`" class="object-contain rounded-lg h-full w-auto" />
                     </div>
                   </div>
                   <div class="flex flex-col ml-5 w-[83%] max-md:ml-0 max-md:w-full">
@@ -49,7 +49,7 @@
               <!-- Performance Metrics -->
               <div class="flex flex-col self-stretch my-auto w-[198px]" role="group" aria-label="Performance Metrics">
                 <template v-for="(value, key) in company.vcPrimaryMetrics" :key="key">
-                  <div class="flex gap-4 items-start w-full" :class="{ 'mt-3': key !== 'ethnicity' }">
+                  <div class="flex gap-4 items-start w-full mt-3">
                     <div class="flex flex-col flex-1 shrink w-full basis-0">
                       <div class="text-sm font-medium leading-none text-slate-700">
                         {{ key.charAt(0).toUpperCase() + key.slice(1) }}
@@ -110,7 +110,9 @@
 import { ref, computed } from 'vue'
 import { mockCompanyData } from '../data/companies.ts'
 import ScoreChart from '../components/ScoreChart.vue'
-const companies = Object.values(mockCompanyData)
+
+// Sort companies by featureOrder when creating the array
+const companies = Object.values(mockCompanyData).sort((a, b) => a.featureOrder - b.featureOrder)
 const currentPage = ref(1)
 const itemsPerPage = 2
 

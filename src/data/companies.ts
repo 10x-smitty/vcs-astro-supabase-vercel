@@ -39,11 +39,6 @@ export interface CompanyData {
     gender: number;
   };
   insights: {
-    ethnicDiversity: {
-      title: string;
-      score: string;
-      description: string;
-    };
     genderDiversity: {
       title: string;
       score: string;
@@ -59,12 +54,12 @@ export interface CompanyData {
       score: string;
       description: string;
     };
-    investments: {
+    ethnicDiversity: {
       title: string;
       score: string;
       description: string;
     };
-    network: {
+    investments: {
       title: string;
       score: string;
       description: string;
@@ -74,6 +69,9 @@ export interface CompanyData {
     title: string;
     content: string;
   };
+  isClaimed: boolean;
+  isFeatured: boolean;
+  featureOrder: number;
 }
 
 export const mockCompanyData: Record<string, CompanyData> = {
@@ -81,7 +79,7 @@ export const mockCompanyData: Record<string, CompanyData> = {
     id: "nvp",
     urlPath: "newark-venture-partners",
     name: "Newark Venture Partners",
-    logo: "https://cdn.builder.io/api/v1/image/assets/TEMP/53b4f18ea19cbb40fe36a0cc0cf21e7b6f65e7983b86a06e92f2a1d6b21f8a2f",
+    logo: "",
     description:
       "Newark Venture Partners is an early-stage venture capital firm focused on B2B software companies in the Newark, New Jersey ecosystem.",
     vcScore: {
@@ -116,20 +114,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 10,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "188.46 pts",
+      investments: {
+        title: "Portfolio",
+        score: "37.96 pts",
         description:
-          "Newark Venture Partners demonstrates decent performance in racial diversity, with an above average leadership representation across racial and ethnic backgrounds. However, there is room for growth to reach the ideal representation mix.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "47.18 pts",
-        description:
-          "Newark Venture Partners has room for improvement in gender diversity, as the leadership is currently all-male. Increasing gender representation, particularly at the leadership level, would strengthen this score.",
+          "While Newark Venture Partners demonstrates moderate levels of follow-on investments, there's potential to expand both the frequency of follow-on investments and diversity among invested founders. These steps would significantly enhance this category score",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "100%",
         description:
           "Newark Venture Partners earns full marks for its geographic positioning, being situated near a major venture capital hub. This location provides substantial access to networks and resources.",
@@ -140,17 +132,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Newark Venture Partners has a strong educational profile, with a good mix of educational backgrounds across its leadership. However, there remains a slight imbalance in the types of institutions represented, which slightly impacts the score.",
       },
-      investments: {
-        title: "Investments",
-        score: "37.96 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "188.46 pts",
         description:
-          "While Newark Venture Partners demonstrates moderate levels of follow-on investments, there's potential to expand both the frequency of follow-on investments and diversity among invested founders. These steps would significantly enhance this category score",
+          "Newark Venture Partners demonstrates decent performance in racial diversity, with an above average leadership representation across racial and ethnic backgrounds. However, there is room for growth to reach the ideal representation mix.",
       },
-      network: {
-        title: "Network",
-        score: "48.50 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "47.18 pts",
         description:
-          "Newark Venture Partners performs well in its network score, reflecting strong backing from institutional LPs and a good co-investor network. Expanding co-investor partnerships could further boost this score.",
+          "Newark Venture Partners has room for improvement in gender diversity, as the leadership is currently all-male. Increasing gender representation, particularly at the leadership level, would strengthen this score.",
       },
     },
     finalSummary: {
@@ -158,12 +150,15 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Newark Venture Partners shows strength in location and network, along with solid racial diversity.\nThere are opportunities for improvement in gender diversity and investment strategies, particularly with respect to follow-on investments and diverse founder representation.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 3,
   },
   a16z: {
     id: "a16z",
     urlPath: "andreessen-horowitz",
     name: "Andreessen Horowitz",
-    logo: "https://placeholder.com/a16z-logo.png",
+    logo: "/logos/andreessen-horowitz.png",
     description:
       "Andreessen Horowitz is an early-stage venture capital firm focused on transformative technology investments across multiple global sectors.",
     vcScore: {
@@ -198,20 +193,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 60,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "245.32 pts",
+      investments: {
+        title: "Portfolio",
+        score: "89.75 pts",
         description:
-          "Andreessen Horowitz shows strong commitment to ethnic diversity with above-average representation across leadership and portfolio companies.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "198.45 pts",
-        description:
-          "The firm demonstrates good progress in gender diversity, with increasing representation in both investment team and portfolio companies.",
+          "Exceptional track record of successful investments across various stages and sectors, with strong follow-on investment rates.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "100%",
         description:
           "Strategically located in Silicon Valley with global reach and multiple office locations worldwide.",
@@ -222,17 +211,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Strong educational diversity with representation from various institutions and backgrounds across the investment team.",
       },
-      investments: {
-        title: "Investments",
-        score: "89.75 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "245.32 pts",
         description:
-          "Exceptional track record of successful investments across various stages and sectors, with strong follow-on investment rates.",
+          "Andreessen Horowitz shows strong commitment to ethnic diversity with above-average representation across leadership and portfolio companies.",
       },
-      network: {
-        title: "Network",
-        score: "92.40 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "198.45 pts",
         description:
-          "Industry-leading network effect with extensive connections across technology, finance, and entrepreneurship ecosystems.",
+          "The firm demonstrates good progress in gender diversity, with increasing representation in both investment team and portfolio companies.",
       },
     },
     finalSummary: {
@@ -240,12 +229,15 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Andreessen Horowitz demonstrates exceptional performance across most metrics, particularly in investment success and network strength. The firm shows strong commitment to diversity and inclusion while maintaining industry-leading positions in key areas.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 1,
   },
   backstage: {
     id: "backstage",
     urlPath: "backstage-capital",
     name: "Backstage Capital",
-    logo: "https://placeholder.com/backstage-logo.png",
+    logo: "",
     description:
       "Backstage Capital is an early-stage venture capital firm focused on investing in historically underrepresented founders and innovative entrepreneurs.",
     vcScore: {
@@ -280,20 +272,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 90,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "289.50 pts",
+      investments: {
+        title: "Portfolio",
+        score: "82.30 pts",
         description:
-          "Backstage Capital leads the industry in ethnic diversity, with exceptional representation across all levels.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "275.60 pts",
-        description:
-          "Outstanding gender diversity metrics, with strong female leadership and portfolio representation.",
+          "Strong focus on underrepresented founders with growing portfolio success rates.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "85%",
         description:
           "Well-positioned with multiple locations and remote-first approach, enabling broad geographic reach.",
@@ -304,17 +290,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Diverse educational backgrounds with emphasis on both traditional and non-traditional paths.",
       },
-      investments: {
-        title: "Investments",
-        score: "82.30 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "289.50 pts",
         description:
-          "Strong focus on underrepresented founders with growing portfolio success rates.",
+          "Backstage Capital leads the industry in ethnic diversity, with exceptional representation across all levels.",
       },
-      network: {
-        title: "Network",
-        score: "79.80 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "275.60 pts",
         description:
-          "Rapidly growing network with strong connections to diverse founder communities.",
+          "Outstanding gender diversity metrics, with strong female leadership and portfolio representation.",
       },
     },
     finalSummary: {
@@ -322,6 +308,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Backstage Capital excels in diversity metrics and demonstrates strong commitment to underrepresented founders. The firm's innovative approach and growing success rate show promising momentum.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 4,
   },
   bmf: {
     id: "bmf",
@@ -362,20 +351,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 80,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "256.75 pts",
+      investments: {
+        title: "Portfolio",
+        score: "76.40 pts",
         description:
-          "BMF Fund maintains strong ethnic diversity across investment team and portfolio companies, with consistent improvement in representation.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "234.50 pts",
-        description:
-          "Strong gender diversity metrics with balanced representation in leadership and investment decisions.",
+          "Consistent investment strategy with focus on diverse founders and sustainable growth.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "90%",
         description:
           "Strategic presence in key markets with strong regional focus and expanding national reach.",
@@ -386,17 +369,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Diverse educational backgrounds with good balance between traditional and non-traditional paths.",
       },
-      investments: {
-        title: "Investments",
-        score: "76.40 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "256.75 pts",
         description:
-          "Consistent investment strategy with focus on diverse founders and sustainable growth.",
+          "BMF Fund maintains strong ethnic diversity across investment team and portfolio companies, with consistent improvement in representation.",
       },
-      network: {
-        title: "Network",
-        score: "82.60 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "234.50 pts",
         description:
-          "Strong network connections with emphasis on regional ecosystems and industry expertise.",
+          "Strong gender diversity metrics with balanced representation in leadership and investment decisions.",
       },
     },
     finalSummary: {
@@ -404,6 +387,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "BMF Fund demonstrates strong performance in diversity metrics and regional focus. The firm shows consistent growth in portfolio performance and maintains strong connections within its target markets.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 5,
   },
   collab: {
     id: "collab",
@@ -444,20 +430,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 85,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "267.80 pts",
+      investments: {
+        title: "Portfolio",
+        score: "78.90 pts",
         description:
-          "Collab Capital excels in ethnic diversity with strong representation and intentional focus on underrepresented founders.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "245.30 pts",
-        description:
-          "Strong gender diversity metrics with balanced leadership and portfolio representation.",
+          "Strong focus on community impact and sustainable growth in portfolio companies.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "85%",
         description:
           "Strategic presence in emerging markets with strong community connections.",
@@ -468,17 +448,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Exceptional educational diversity with emphasis on both traditional and alternative pathways.",
       },
-      investments: {
-        title: "Investments",
-        score: "78.90 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "267.80 pts",
         description:
-          "Strong focus on community impact and sustainable growth in portfolio companies.",
+          "Collab Capital excels in ethnic diversity with strong representation and intentional focus on underrepresented founders.",
       },
-      network: {
-        title: "Network",
-        score: "84.70 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "245.30 pts",
         description:
-          "Robust network of community partners and industry connections supporting portfolio success.",
+          "Strong gender diversity metrics with balanced leadership and portfolio representation.",
       },
     },
     finalSummary: {
@@ -486,6 +466,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Collab Capital shows exceptional strength in community engagement and diversity metrics. The firm's innovative approach to investment and strong focus on underserved markets creates significant impact.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 6,
   },
   collide: {
     id: "collide",
@@ -526,20 +509,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 82,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "262.40 pts",
+      investments: {
+        title: "Portfolio",
+        score: "86.30 pts",
         description:
-          "Collide Capital maintains high standards in ethnic diversity across all levels of operation and investment decisions.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "238.90 pts",
-        description:
-          "Strong commitment to gender diversity with balanced representation in leadership and investments.",
+          "Strong track record in early-stage investments with focus on diverse founding teams.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "95%",
         description:
           "Well-positioned across multiple markets with strong presence in key startup ecosystems.",
@@ -550,17 +527,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Diverse educational backgrounds with emphasis on varied experiences and expertise.",
       },
-      investments: {
-        title: "Investments",
-        score: "86.30 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "262.40 pts",
         description:
-          "Strong track record in early-stage investments with focus on diverse founding teams.",
+          "Collide Capital maintains high standards in ethnic diversity across all levels of operation and investment decisions.",
       },
-      network: {
-        title: "Network",
-        score: "88.90 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "238.90 pts",
         description:
-          "Extensive network of industry partners and co-investors supporting portfolio growth.",
+          "Strong commitment to gender diversity with balanced representation in leadership and investments.",
       },
     },
     finalSummary: {
@@ -568,6 +545,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Collide Capital demonstrates strong performance in early-stage investments and diversity metrics. The firm's innovative approach and strong network create significant value for portfolio companies.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 7,
   },
   equity: {
     id: "equity",
@@ -608,20 +588,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 88,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "278.60 pts",
+      investments: {
+        title: "Portfolio",
+        score: "82.70 pts",
         description:
-          "Equity Alliance leads in ethnic diversity with exceptional representation and intentional focus on inclusive investing.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "256.40 pts",
-        description:
-          "Strong gender diversity metrics with balanced representation across all levels.",
+          "Focused investment strategy prioritizing equitable access and sustainable growth.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "88%",
         description:
           "Strategic presence in diverse markets with focus on underserved communities.",
@@ -632,17 +606,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Strong educational diversity with emphasis on varied backgrounds and experiences.",
       },
-      investments: {
-        title: "Investments",
-        score: "82.70 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "278.60 pts",
         description:
-          "Focused investment strategy prioritizing equitable access and sustainable growth.",
+          "Equity Alliance leads in ethnic diversity with exceptional representation and intentional focus on inclusive investing.",
       },
-      network: {
-        title: "Network",
-        score: "86.80 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "256.40 pts",
         description:
-          "Strong network of community partners and industry connections supporting inclusive growth.",
+          "Strong gender diversity metrics with balanced representation across all levels.",
       },
     },
     finalSummary: {
@@ -650,6 +624,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Equity Alliance demonstrates exceptional commitment to inclusive investing and community impact. The firm's strong focus on diversity and equitable access creates sustainable value across its portfolio.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 8,
   },
   firstround: {
     id: "firstround",
@@ -690,20 +667,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 78,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "234.50 pts",
+      investments: {
+        title: "Portfolio",
+        score: "92.40 pts",
         description:
-          "First Round Capital shows improving ethnic diversity metrics with ongoing commitment to inclusive investing.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "228.90 pts",
-        description:
-          "Strong progress in gender diversity with increasing representation across investment team and portfolio.",
+          "Exceptional track record in early-stage investments with strong follow-on rates.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "98%",
         description:
           "Strategic presence in major tech hubs with strong national reach.",
@@ -714,17 +685,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Strong educational diversity with emphasis on both traditional and non-traditional backgrounds.",
       },
-      investments: {
-        title: "Investments",
-        score: "92.40 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "234.50 pts",
         description:
-          "Exceptional track record in early-stage investments with strong follow-on rates.",
+          "First Round Capital shows improving ethnic diversity metrics with ongoing commitment to inclusive investing.",
       },
-      network: {
-        title: "Network",
-        score: "94.60 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "228.90 pts",
         description:
-          "Industry-leading network and platform resources supporting founder success.",
+          "Strong progress in gender diversity with increasing representation across investment team and portfolio.",
       },
     },
     finalSummary: {
@@ -732,6 +703,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "First Round Capital demonstrates exceptional strength in early-stage investing and founder support. While showing improvement in diversity metrics, the firm's platform approach and network create significant value for portfolio companies.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 9,
   },
   precursor: {
     id: "precursor",
@@ -772,20 +746,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 85,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "258.40 pts",
+      investments: {
+        title: "Portfolio",
+        score: "84.30 pts",
         description:
-          "Precursor Ventures maintains strong commitment to ethnic diversity in both team composition and portfolio investments.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "242.60 pts",
-        description:
-          "Strong gender diversity metrics with balanced representation and intentional focus on female founders.",
+          "Strong track record in pre-seed investments with focus on diverse founding teams.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "92%",
         description:
           "Well-positioned in key startup ecosystems with strong national presence and remote-first approach.",
@@ -796,17 +764,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Diverse educational backgrounds with emphasis on both traditional and alternative pathways.",
       },
-      investments: {
-        title: "Investments",
-        score: "84.30 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "258.40 pts",
         description:
-          "Strong track record in pre-seed investments with focus on diverse founding teams.",
+          "Precursor Ventures maintains strong commitment to ethnic diversity in both team composition and portfolio investments.",
       },
-      network: {
-        title: "Network",
-        score: "86.90 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "242.60 pts",
         description:
-          "Robust network supporting early-stage founders with strong industry connections.",
+          "Strong gender diversity metrics with balanced representation and intentional focus on female founders.",
       },
     },
     finalSummary: {
@@ -814,6 +782,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Precursor Ventures shows exceptional strength in early-stage investing with strong commitment to founder diversity. The firm's pre-seed focus and support model create significant value for portfolio companies.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 10,
   },
   rightside: {
     id: "rightside",
@@ -854,20 +825,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 70,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "224.50 pts",
+      investments: {
+        title: "Portfolio",
+        score: "88.60 pts",
         description:
-          "Right Side Capital shows growing commitment to ethnic diversity with ongoing improvements in representation.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "218.70 pts",
-        description:
-          "Steady progress in gender diversity metrics with increasing focus on balanced representation.",
+          "Strong systematic approach to early-stage investments with consistent performance metrics.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "88%",
         description:
           "Strategic presence in major tech markets with expanding geographic reach.",
@@ -878,17 +843,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Strong educational diversity with emphasis on quantitative and technical backgrounds.",
       },
-      investments: {
-        title: "Investments",
-        score: "88.60 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "224.50 pts",
         description:
-          "Strong systematic approach to early-stage investments with consistent performance metrics.",
+          "Right Side Capital shows growing commitment to ethnic diversity with ongoing improvements in representation.",
       },
-      network: {
-        title: "Network",
-        score: "84.30 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "218.70 pts",
         description:
-          "Well-developed network of technical and industry experts supporting portfolio companies.",
+          "Steady progress in gender diversity metrics with increasing focus on balanced representation.",
       },
     },
     finalSummary: {
@@ -896,6 +861,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Right Side Capital demonstrates strong performance through its systematic, data-driven approach. While showing improvement in diversity metrics, the firm's technical expertise and consistent methodology drive portfolio success.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 11,
   },
   slauson: {
     id: "slauson",
@@ -936,20 +904,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 88,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "282.60 pts",
+      investments: {
+        title: "Portfolio",
+        score: "86.70 pts",
         description:
-          "Slauson & Co. leads in ethnic diversity with exceptional representation and focused commitment to underrepresented founders.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "264.30 pts",
-        description:
-          "Strong gender diversity metrics with balanced representation across all levels of operation.",
+          "Strong focus on community impact and sustainable growth in portfolio companies.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "94%",
         description:
           "Strategic presence in underserved markets with strong community connections.",
@@ -960,17 +922,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Exceptional educational diversity with strong emphasis on varied pathways and experiences.",
       },
-      investments: {
-        title: "Investments",
-        score: "86.70 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "282.60 pts",
         description:
-          "Strong focus on community impact and sustainable growth in portfolio companies.",
+          "Slauson & Co. leads in ethnic diversity with exceptional representation and focused commitment to underrepresented founders.",
       },
-      network: {
-        title: "Network",
-        score: "88.90 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "264.30 pts",
         description:
-          "Robust network of community partners and industry connections supporting founder success.",
+          "Strong gender diversity metrics with balanced representation across all levels of operation.",
       },
     },
     finalSummary: {
@@ -978,12 +940,15 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Slauson & Co. demonstrates exceptional commitment to community impact and founder diversity. The firm's innovative approach and strong community connections create sustainable value across its portfolio.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 12,
   },
   usv: {
     id: "usv",
     urlPath: "union-square-ventures",
     name: "Union Square Ventures",
-    logo: "",
+    logo: "/logos/union-square.png",
     description:
       "Union Square Ventures is a thesis-driven venture capital firm focused on investing in revolutionary, disruptive networks and platforms.",
     vcScore: {
@@ -1018,20 +983,14 @@ export const mockCompanyData: Record<string, CompanyData> = {
       gender: 78,
     },
     insights: {
-      ethnicDiversity: {
-        title: "Ethnic Diversity",
-        score: "236.80 pts",
+      investments: {
+        title: "Portfolio",
+        score: "94.60 pts",
         description:
-          "Union Square Ventures shows improving ethnic diversity metrics with ongoing commitment to inclusive investing.",
-      },
-      genderDiversity: {
-        title: "Gender Diversity",
-        score: "232.40 pts",
-        description:
-          "Strong progress in gender diversity with increasing representation across investment team and portfolio.",
+          "Exceptional investment track record with strong thesis-driven approach and consistent returns.",
       },
       location: {
-        title: "Location",
+        title: "Geo Location",
         score: "96%",
         description:
           "Strategic presence in major tech hubs with strong global reach and network.",
@@ -1042,17 +1001,17 @@ export const mockCompanyData: Record<string, CompanyData> = {
         description:
           "Strong educational diversity with emphasis on both traditional and non-traditional backgrounds.",
       },
-      investments: {
-        title: "Investments",
-        score: "94.60 pts",
+      ethnicDiversity: {
+        title: "Ethnicity",
+        score: "236.80 pts",
         description:
-          "Exceptional investment track record with strong thesis-driven approach and consistent returns.",
+          "Union Square Ventures shows improving ethnic diversity metrics with ongoing commitment to inclusive investing.",
       },
-      network: {
-        title: "Network",
-        score: "96.80 pts",
+      genderDiversity: {
+        title: "Gender",
+        score: "232.40 pts",
         description:
-          "Industry-leading network with extensive global connections and strong ecosystem support.",
+          "Strong progress in gender diversity with increasing representation across investment team and portfolio.",
       },
     },
     finalSummary: {
@@ -1060,6 +1019,9 @@ export const mockCompanyData: Record<string, CompanyData> = {
       content:
         "Union Square Ventures demonstrates exceptional strength in investment performance and thesis-driven approach. While continuing to improve diversity metrics, the firm's strong network and consistent track record create significant value for portfolio companies.",
     },
+    isClaimed: false,
+    isFeatured: true,
+    featureOrder: 2,
   },
 };
 
