@@ -1,0 +1,451 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <div class="flex overflow-hidden flex-col bg-white" role="main">
+    <section class="flex overflow-hidden flex-col justify-center items-center py-24 w-full text-center bg-white max-md:max-w-full" aria-labelledby="about-heading">
+        <div class="flex flex-col px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
+            <div class="flex flex-col items-center w-full max-md:max-w-full">
+                <div class="flex flex-col max-w-screen-md w-[768px] max-md:max-w-full">
+                    <div class="flex flex-col items-start w-full font-semibold max-md:max-w-full">
+                        <h2 id="about-heading" class="mx-auto text-base text-violet-700 max-md:max-w-full">About us</h2>
+                        <h1 class="mx-auto mt-3 text-5xl tracking-tighter leading-none text-gray-900 max-md:max-w-full max-md:text-4xl">About the company</h1>
+                    </div>
+                    <p class="mt-6 text-xl text-slate-600 max-md:max-w-full">Learn more about the company and the team behind it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="flex overflow-hidden flex-col justify-center items-center py-24 w-full font-semibold bg-gray-50 max-md:max-w-full" aria-label="Company statistics">
+        <div class="flex flex-wrap gap-10 items-center px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b3e7a1e6b80c585aa8d62233442c8db2d7bd7dcc905a470de835794cd7e886d5?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Company illustration" class="object-contain flex-1 shrink self-stretch my-auto w-full aspect-[1.06] basis-0 min-w-[240px] max-md:max-w-full"/>
+            <div class="flex flex-col flex-1 shrink self-stretch my-auto basis-0 max-w-[560px] min-w-[240px] max-md:max-w-full">
+                <div class="flex flex-col w-full max-md:max-w-full">
+                    <h2 class="text-base text-violet-700 max-md:max-w-full">Build better, launch faster</h2>
+                    <p class="mt-3 text-5xl tracking-tighter text-gray-900 leading-[60px] max-md:max-w-full max-md:text-4xl max-md:leading-[56px]">We're only just getting started on our journey</p>
+                </div>
+                <div class="flex flex-wrap gap-12 items-start mt-16 w-full max-md:mt-10 max-md:max-w-full">
+                    <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]" role="region" aria-label="Projects completed statistic">
+                        <div class="flex flex-col w-full">
+                            <p class="text-6xl tracking-tighter leading-tight text-violet-500 max-md:text-4xl">400+</p>
+                            <p class="mt-3 w-full text-lg leading-loose text-gray-900">Projects completed</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]" role="region" aria-label="Return on investment statistic">
+                        <div class="flex flex-col w-full">
+                            <p class="text-6xl tracking-tighter leading-tight text-violet-500 max-md:text-4xl">600%</p>
+                            <p class="mt-3 w-full text-lg leading-loose text-gray-900">Return on investment</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]" role="region" aria-label="Global downloads statistic">
+                        <div class="flex flex-col w-full">
+                            <p class="text-6xl tracking-tighter leading-tight text-violet-500 max-md:text-4xl">10k</p>
+                            <p class="mt-3 w-full text-lg leading-loose text-gray-900">Global downloads</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col flex-1 shrink basis-0 min-w-[240px]" role="region" aria-label="Five star reviews statistic">
+                        <div class="flex flex-col w-full">
+                            <p class="text-6xl tracking-tighter leading-tight text-violet-500 max-md:text-4xl">200+</p>
+                            <p class="mt-3 w-full text-lg leading-loose text-gray-900">5-star reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="flex justify-center items-start w-full max-md:max-w-full" aria-hidden="true"/>
+    <section class="flex overflow-hidden flex-col items-center py-24 w-full bg-white max-md:max-w-full" aria-labelledby="team-heading">
+        <div class="flex flex-col px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
+            <div class="flex flex-col items-center w-full max-md:max-w-full">
+                <div class="flex flex-col max-w-screen-md text-center w-[768px] max-md:max-w-full">
+                    <div class="flex flex-col items-start w-full font-semibold max-md:max-w-full">
+                        <h2 id="team-heading" class="mx-auto text-base text-violet-700 max-md:max-w-full">We're hiring!</h2>
+                        <h3 class="mx-auto mt-3 text-4xl tracking-tighter leading-none text-gray-900 max-md:max-w-full">Meet our team</h3>
+                    </div>
+                    <p class="mt-5 text-xl leading-8 text-slate-600 max-md:max-w-full">Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.</p>
+                </div>
+                <div class="flex gap-3 items-start mt-8 text-base font-semibold">
+                    <a href="#about" class="flex overflow-hidden gap-1.5 justify-center items-center px-5 py-3 bg-white rounded-lg border border-gray-300 border-solid shadow-sm text-slate-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">About us</a>
+                    <a href="#positions" class="flex overflow-hidden gap-1.5 justify-center items-center px-5 py-3 text-white bg-blue-700 rounded-lg border-2 border-solid shadow-sm border-white border-opacity-10 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500">Open positions</a>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col px-8 mt-16 w-full max-w-screen-xl max-md:px-5 max-md:mt-10 max-md:max-w-full" role="region" aria-label="Team Members">
+            <div class="flex flex-wrap gap-8 w-full max-md:max-w-full">
+                <div class="flex flex-col flex-1 shrink justify-center py-6 pr-4 pl-6 bg-gray-50 basis-0 min-w-[240px] max-md:pl-5" role="article" aria-labelledby="member1-name">
+                    <div class="flex flex-col w-full min-w-[240px]">
+                        <div class="flex relative flex-col self-center w-24 aspect-square rounded-[200px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/418bcca151ebf89ec75b84806d9c82a7fbfa4652fc87d49dce517fd9204314e2?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Amos Winbush III, Founder & CEO" class="object-cover absolute inset-0 size-full rounded-[200px]"/>
+                        </div>
+                        <div class="flex flex-col mt-5 w-full">
+                            <div class="flex flex-col w-full text-center">
+                                <div class="flex flex-col w-full">
+                                    <h2 id="member1-name" class="text-lg font-semibold leading-loose text-gray-900 opacity-90">Amos Winbush lll</h2>
+                                    <div class="text-base text-violet-700">Founder & CEO</div>
+                                </div>
+                                <div class="mt-2 text-base leading-6 text-slate-600">Former co-founder of Opendoor. Early staff at Spotify and Clearbit.</div>
+                            </div>
+                            <div class="flex gap-4 justify-center items-center mt-4 w-full">
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a137115f5495fb9544865ccdc06309e2197ab816a6bdba6840190e3562398dce?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="LinkedIn Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/237f9ec373d37886c6de227fa84b8370be9c66eec7521a57db2f942cc53e1364?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Twitter Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/943ff61134e7d050bce525ce561ff276727648649065e4acbd177bfd7e0b8157?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="GitHub Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 shrink justify-center py-6 pr-4 pl-6 bg-gray-50 basis-0 min-w-[240px] max-md:pl-5" role="article" aria-labelledby="member2-name">
+                    <div class="flex flex-col w-full min-w-[240px]">
+                        <div class="flex relative flex-col self-center w-24 aspect-square rounded-[200px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ea2c4e208bd3ea9affed0bf5f61c71460616e7cbfb84613f6c125bd4eb0bc2c?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Nakiso Maodza, Co-founder / CPO" class="object-cover absolute inset-0 size-full rounded-[200px]"/>
+                        </div>
+                        <div class="flex flex-col mt-5 w-full">
+                            <div class="flex flex-col w-full text-center">
+                                <div class="flex flex-col w-full">
+                                    <h2 id="member2-name" class="text-lg font-semibold leading-loose text-gray-900 opacity-90">Nakiso Maodza</h2>
+                                    <div class="text-base text-violet-700">Co-founder / CPO</div>
+                                </div>
+                                <div class="mt-2 text-base leading-6 text-slate-600">Lead engineering teams at Figma, Pitch, and Protocol Labs.</div>
+                            </div>
+                            <div class="flex gap-4 justify-center items-center mt-4 w-full">
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/336181aa3098688114328c182278a1af9daeb6fe075b1dab1651bc13380cc2aa?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="LinkedIn Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/34efbb41f82107e26292b560d8bb6a93dc5f527f1441b03bd23ae057fdcef15b?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Twitter Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/943ff61134e7d050bce525ce561ff276727648649065e4acbd177bfd7e0b8157?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="GitHub Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 shrink justify-center py-6 pr-4 pl-6 bg-gray-50 basis-0 min-w-[240px] max-md:pl-5" role="article" aria-labelledby="member3-name">
+                    <div class="flex flex-col w-full min-w-[240px]">
+                        <div class="flex relative flex-col self-center w-24 aspect-square rounded-[200px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/ddba3dcc651d76af1665adafa9ff868ccfd0f5c813721f0ee3eb051e9c186d13?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Bryson Nobles, Co-founder / CTO" class="object-cover absolute inset-0 size-full rounded-[200px]"/>
+                        </div>
+                        <div class="flex flex-col mt-5 w-full">
+                            <div class="flex flex-col w-full text-center">
+                                <div class="flex flex-col w-full">
+                                    <h2 id="member3-name" class="text-lg font-semibold leading-loose text-gray-900 opacity-90">Bryson Nobles</h2>
+                                    <div class="text-base text-violet-700">Co-founder / CTO</div>
+                                </div>
+                                <div class="mt-2 text-base leading-6 text-slate-600">Former PM for Linear, Lambda School, and On Deck.</div>
+                            </div>
+                            <div class="flex gap-4 justify-center items-center mt-4 w-full">
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dcc3a1cfaa8a6dc1261468c522afbbe5ff08145356c56a535062d713e53f83f3?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="LinkedIn Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/26f94a01c0dfa33479ce46a1a2e816a322eaa5f7c003e98b66209c93f484795b?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Twitter Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/943ff61134e7d050bce525ce561ff276727648649065e4acbd177bfd7e0b8157?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="GitHub Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 shrink justify-center py-6 pr-4 pl-6 bg-gray-50 basis-0 min-w-[240px] max-md:pl-5" role="article" aria-labelledby="member4-name">
+                    <div class="flex flex-col w-full min-w-[240px]">
+                        <div class="flex relative flex-col self-center w-24 aspect-square rounded-[200px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c57185afd6b9e8e0ed66a014a480523dd621479be38ece8007804dfbc6e88382?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Andrew Graham, CMO" class="object-cover absolute inset-0 size-full rounded-[200px]"/>
+                        </div>
+                        <div class="flex flex-col mt-5 w-full">
+                            <div class="flex flex-col w-full text-center">
+                                <div class="flex flex-col w-full">
+                                    <h2 id="member4-name" class="text-lg font-semibold leading-loose text-gray-900 opacity-90">Andrew Graham</h2>
+                                    <div class="text-base text-violet-700">CMO</div>
+                                </div>
+                                <div class="mt-2 text-base leading-6 text-slate-600">Former frontend dev for Linear, Coinbase, and Postscript.</div>
+                            </div>
+                            <div class="flex gap-4 justify-center items-center mt-4 w-full">
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/11ee1dc1b9e75a559cb23dfc2c395a3ceef06b91a75efce6fdfccc4105f30123?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="LinkedIn Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5fe96ab91538f8ef4c85d4d3045e0cad2100a198660b5af8c2fac5e7980a4366?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Twitter Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/943ff61134e7d050bce525ce561ff276727648649065e4acbd177bfd7e0b8157?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="GitHub Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 shrink justify-center py-6 pr-4 pl-6 bg-gray-50 basis-0 min-w-[240px] max-md:pl-5" role="article" aria-labelledby="member5-name">
+                    <div class="flex flex-col w-full min-w-[240px]">
+                        <div class="flex relative flex-col self-center w-24 aspect-square rounded-[200px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/621edc21ece8530d46a51541129e209276b425541ae7269c05fd07169d68788e?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Adrian Franks, CDO / Lead Creative" class="object-cover absolute inset-0 size-full rounded-[200px]"/>
+                        </div>
+                        <div class="flex flex-col mt-5 w-full">
+                            <div class="flex flex-col w-full text-center">
+                                <div class="flex flex-col w-full">
+                                    <h2 id="member5-name" class="text-lg font-semibold leading-loose text-gray-900 opacity-90">Adrian Franks</h2>
+                                    <div class="text-base text-violet-700">CDO / Lead Creative</div>
+                                </div>
+                                <div class="mt-2 text-base leading-6 text-slate-600">Lead backend dev at Clearbit. Former Clearbit and Loom.</div>
+                            </div>
+                            <div class="flex gap-4 justify-center items-center mt-4 w-full">
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1689c9de89b4e0415a5384ac67c2db29b3651cd41a92168965f26f8e48448cd7?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="LinkedIn Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b6bfd52bd4cf4570a2733ee17512f3b3a01ec2bff6c23dbc19dafc345fcc8c82?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Twitter Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/943ff61134e7d050bce525ce561ff276727648649065e4acbd177bfd7e0b8157?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="GitHub Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 shrink justify-center py-6 pr-4 pl-6 bg-gray-50 basis-0 min-w-[240px] max-md:pl-5" role="article" aria-labelledby="member6-name">
+                    <div class="flex flex-col w-full min-w-[240px]">
+                        <div class="flex relative flex-col self-center w-24 aspect-square rounded-[200px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/879c5dabb626ce0632ac23702f94e33224233ffcffef4ca03b52af53f8682565?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Caitlyn King, Product Designer" class="object-cover absolute inset-0 size-full rounded-[200px]"/>
+                        </div>
+                        <div class="flex flex-col mt-5 w-full">
+                            <div class="flex flex-col w-full text-center">
+                                <div class="flex flex-col w-full">
+                                    <h2 id="member6-name" class="text-lg font-semibold leading-loose text-gray-900 opacity-90">Caitlyn King</h2>
+                                    <div class="text-base text-violet-700">Product Designer</div>
+                                </div>
+                                <div class="mt-2 text-base leading-6 text-slate-600">Founding design team at Figma. Former Pleo, Stripe, and Tile.</div>
+                            </div>
+                            <div class="flex gap-4 justify-center items-center mt-4 w-full">
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1d40f316db0da556fffd96cee2c40cad09bf6556820b7ca6f32eec78b11c522f?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="LinkedIn Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d9c7d2984bfc873a6f939f7f494b39ee3eb30122361182dfeab122b9eed7e19a?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Twitter Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/943ff61134e7d050bce525ce561ff276727648649065e4acbd177bfd7e0b8157?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="GitHub Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 shrink justify-center py-6 pr-4 pl-6 bg-gray-50 basis-0 min-w-[240px] max-md:pl-5" role="article" aria-labelledby="member7-name">
+                    <div class="flex flex-col w-full min-w-[240px]">
+                        <div class="flex relative flex-col self-center w-24 aspect-square rounded-[200px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/371f940edf04183f7dca9021e9ad0e47df08c7a9864295a0089f376f720915e5?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Zaid Schwartz, UX Researcher" class="object-cover absolute inset-0 size-full rounded-[200px]"/>
+                        </div>
+                        <div class="flex flex-col mt-5 w-full">
+                            <div class="flex flex-col w-full text-center">
+                                <div class="flex flex-col w-full">
+                                    <h2 id="member7-name" class="text-lg font-semibold leading-loose text-gray-900 opacity-90">Zaid Schwartz</h2>
+                                    <div class="text-base text-violet-700">UX Researcher</div>
+                                </div>
+                                <div class="mt-2 text-base leading-6 text-slate-600">Lead user research for Slack. Contractor for Netflix and Udacity.</div>
+                            </div>
+                            <div class="flex gap-4 justify-center items-center mt-4 w-full">
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/1f99ee7cfb4d4f56626cc2fdd696c1a8f508d9aff03255617ceea67877dc39d0?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="LinkedIn Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/667f883156867eabdb7b47f4f4af6359e9bc881ee07599c0e9875d0d97d67160?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Twitter Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/943ff61134e7d050bce525ce561ff276727648649065e4acbd177bfd7e0b8157?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="GitHub Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col flex-1 shrink justify-center py-6 pr-4 pl-6 bg-gray-50 basis-0 min-w-[240px] max-md:pl-5" role="article" aria-labelledby="member8-name">
+                    <div class="flex flex-col w-full min-w-[240px]">
+                        <div class="flex relative flex-col self-center w-24 aspect-square rounded-[200px]">
+                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/061fd748a85594bc91e3d751c000f390d573c3fcb9cb5589789e0514d3e62273?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Marco Kelly, Customer Success" class="object-cover absolute inset-0 size-full rounded-[200px]"/>
+                        </div>
+                        <div class="flex flex-col mt-5 w-full">
+                            <div class="flex flex-col w-full text-center">
+                                <div class="flex flex-col w-full">
+                                    <h2 id="member8-name" class="text-lg font-semibold leading-loose text-gray-900 opacity-90">Marco Kelly</h2>
+                                    <div class="text-base text-violet-700">Customer Success</div>
+                                </div>
+                                <div class="mt-2 text-base leading-6 text-slate-600">Lead CX at Wealthsimple. Former PagerDuty and Sqreen.</div>
+                            </div>
+                            <div class="flex gap-4 justify-center items-center mt-4 w-full">
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/680a2844ab71424f053e104a2ee855bf234a69dd3b21d3bf0c92c479e2ae8b37?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="LinkedIn Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c41eade5be7bf60f58892ef5afd3267830cde5fac109b5470aa1db91da8782e6?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Twitter Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                                <a href="#" class="focus:outline-none focus:ring-2 focus:ring-violet-700 rounded-full"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/943ff61134e7d050bce525ce561ff276727648649065e4acbd177bfd7e0b8157?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="GitHub Profile" class="object-contain shrink-0 self-stretch my-auto w-5 aspect-square"/> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div
+  class="flex overflow-hidden flex-col items-center self-stretch py-24 text-center bg-gray-50"
+  role="region"
+  aria-labelledby="values-heading"
+    >
+    <div
+        class="flex flex-col px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full"
+    >
+        <div class="flex flex-col items-center w-full max-md:max-w-full">
+        <div class="flex flex-col max-w-screen-md w-[768px] max-md:max-w-full">
+            <div
+            class="flex flex-col items-start w-full font-semibold max-md:max-w-full"
+            >
+            <div 
+                id="values-heading"
+                class="mx-auto text-base text-violet-700 max-md:max-w-full"
+            >
+                Our values
+            </div>
+            <h2
+                class="mx-auto mt-3 text-4xl tracking-tighter leading-none text-gray-900 max-md:max-w-full"
+            >
+                How we work at bckers
+            </h2>
+            </div>
+            <p class="mt-5 text-xl text-slate-600 max-md:max-w-full">
+            Our shared values keep us connected and guide us as one team.
+            </p>
+        </div>
+        </div>
+    </div>
+    <div
+        class="flex flex-col px-8 mt-16 w-full max-w-screen-xl max-md:px-5 max-md:mt-10 max-md:max-w-full"
+    >
+        <div class="flex flex-wrap gap-16 items-start w-full max-md:max-w-full">
+        <div 
+            class="flex flex-col flex-1 shrink basis-0 min-w-[320px]"
+            role="article"
+        >
+            <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/dae36485ecc4230d61b05c65a2f184c1fa4fb0667f757c855f6c48a5aeb5bbcd?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272"
+            class="object-contain self-center w-12 shadow-sm aspect-square"
+            alt="Team inbox illustration"
+            />
+            <div class="flex flex-col mt-5 w-full">
+            <h3 class="text-xl font-semibold text-gray-900">
+                Share team inboxes
+            </h3>
+            <p class="mt-2 text-base leading-6 text-slate-600">
+                Whether you have a team of 2 or 200, our shared team inboxes keep
+                everyone on the same page and in the loop.
+            </p>
+            </div>
+        </div>
+        <div 
+            class="flex flex-col flex-1 shrink basis-0 min-w-[320px]"
+            role="article"
+        >
+            <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/14c7c30019f03de9c3954ba37f020f667ac3b3e98f8bc6d6ef45330bfd5f0687?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272"
+            class="object-contain self-center w-12 shadow-sm aspect-square"
+            alt="Instant answers illustration"
+            />
+            <div class="flex flex-col mt-5 w-full">
+            <h3 class="text-xl font-semibold text-gray-900">
+                Deliver instant answers
+            </h3>
+            <p class="mt-2 text-base leading-6 text-slate-600">
+                An all-in-one customer service platform that helps you balance
+                everything your customers need to be happy.
+            </p>
+            </div>
+        </div>
+        <div 
+            class="flex flex-col flex-1 shrink basis-0 min-w-[320px]"
+            role="article"
+        >
+            <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/5f6af37dcc568ab5193a041c4c975d23f809b1357f3a126872b2a28bbeb9c63c?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272"
+            class="object-contain self-center w-12 shadow-sm aspect-square"
+            alt="Team management reports illustration"
+            />
+            <div class="flex flex-col mt-5 w-full">
+            <h3 class="text-xl font-semibold text-gray-900">
+                Manage your team with reports
+            </h3>
+            <p class="mt-2 text-base leading-6 text-slate-600">
+                Measure what matters with Untitled's easy-to-use reports. You can
+                filter, export, and drilldown on the data in a couple clicks.
+            </p>
+            </div>
+        </div>
+        <div 
+            class="flex flex-col flex-1 shrink basis-0 min-w-[320px]"
+            role="article"
+        >
+            <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/bc5d80ccc3cfeabaf853017460acebce722a4e75f9153d5fb97bc3febfd7dddb?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272"
+            class="object-contain self-center w-12 shadow-sm aspect-square"
+            alt="Customer connection illustration"
+            />
+            <div class="flex flex-col mt-5 w-full">
+            <h3 class="text-xl font-semibold text-gray-900">
+                Connect with customers
+            </h3>
+            <p class="mt-2 text-base leading-6 text-slate-600">
+                Solve a problem or close a sale in real-time with chat. If no one is
+                available, customers are seamlessly routed to email without
+                confusion.
+            </p>
+            </div>
+        </div>
+        <div 
+            class="flex flex-col flex-1 shrink basis-0 min-w-[320px]"
+            role="article"
+        >
+            <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/58e24f55b66055979d32a115b7c5cfc171c7205c541c27fd7d60e362507d1802?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272"
+            class="object-contain self-center w-12 shadow-sm aspect-square"
+            alt="Tool integration illustration"
+            />
+            <div class="flex flex-col mt-5 w-full">
+            <h3 class="text-xl font-semibold text-gray-900">
+                Connect the tools you already use
+            </h3>
+            <p class="mt-2 text-base leading-6 text-slate-600">
+                Explore 100+ integrations that make your day-to-day workflow more
+                efficient and familiar. Plus, our extensive developer tools.
+            </p>
+            </div>
+        </div>
+        <div 
+            class="flex flex-col flex-1 shrink basis-0 min-w-[320px]"
+            role="article"
+        >
+            <img
+            loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/23b77b7b2af8f436d3dfb6c797f181ea6c152ca49481751092ae61920cd3df63?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272"
+            class="object-contain self-center w-12 shadow-sm aspect-square"
+            alt="People illustration"
+            />
+            <div class="flex flex-col mt-5 w-full">
+            <h3 class="text-xl font-semibold text-gray-900">
+                Our people make the difference
+            </h3>
+            <p class="mt-2 text-base leading-6 text-slate-600">
+                We're an extension of your customer service team, and all of our
+                resources are free. Chat to our friendly team 24/7 when you need
+                help.
+            </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <section class="flex overflow-hidden relative flex-col items-center py-24 w-full bg-white max-md:max-w-full" aria-labelledby="contact-heading">
+        <div class="flex absolute inset-x-0 bottom-0 z-0 w-full bg-slate-100 min-h-[202px] top-[202px] max-md:max-w-full"></div>
+        <div class="flex z-0 flex-col self-center px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
+            <div class="flex flex-wrap gap-8 gap-y-8 justify-between content-start items-start p-16 w-full rounded-2xl shadow-xl bg-slate-200 max-md:px-5 max-md:max-w-full">
+                <div class="flex flex-col flex-1 shrink max-w-screen-md basis-0 min-w-[320px] text-slate-600 max-md:max-w-full">
+                    <h2 id="contact-heading" class="text-3xl font-semibold leading-none max-md:max-w-full">Connect with Us Today!</h2>
+                    <p class="mt-4 text-xl max-md:max-w-full">Subheadline about connecting and leaving email.</p>
+                </div>
+                <form class="flex gap-3 items-start text-base font-semibold min-w-[240px]">
+                    <label for="email-input" class="sr-only">Enter Email Here</label>
+                    <input type="email" id="email-input" class="flex overflow-hidden gap-1.5 justify-center items-center px-5 py-3 bg-white rounded-lg border border-gray-300 border-solid shadow-sm text-slate-600" placeholder="Enter Email Here" required/>
+                    <button type="submit" class="flex overflow-hidden gap-1.5 justify-center items-center px-5 py-3 text-white whitespace-nowrap bg-blue-700 rounded-lg border-2 border-solid shadow-sm border-white border-opacity-10 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="flex overflow-hidden flex-col items-center pt-16 pb-12 w-full bg-slate-100 max-md:max-w-full" role="contentinfo">
+        <div class="flex flex-col px-8 w-full max-w-screen-xl max-md:px-5 max-md:max-w-full">
+            <div class="flex gap-8 items-start w-full max-md:max-w-full">
+                <div class="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px] max-md:max-w-full">
+                    <div class="flex flex-col w-80 max-w-full text-base text-black">
+                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/607c3cc4020db3d91b2e9442fabc2436f008618b3e66c5ce95827d143329a949?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Company Logo" class="object-contain max-w-full aspect-[7.94] w-[174px]"/>
+                        <p class="mt-8">Transparency, Access, Trust</p>
+                    </div>
+                    <nav class="flex flex-wrap gap-8 items-center mt-8 w-full max-md:max-w-full" aria-label="Footer navigation">
+                        <a href="#about" class="flex gap-2 items-center self-stretch my-auto text-base font-semibold text-black whitespace-nowrap hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">About</a>
+                        <a href="#product" class="flex gap-2 items-center self-stretch my-auto text-base font-semibold text-black whitespace-nowrap hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Product</a>
+                        <a href="#signup" class="flex gap-2 items-center self-stretch my-auto text-base font-semibold text-black whitespace-nowrap hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Signup</a>
+                        <a href="#login" class="flex gap-2 items-center self-stretch my-auto text-base font-semibold text-black whitespace-nowrap hover:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Login</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col px-8 mt-16 w-full max-w-screen-xl max-md:px-5 max-md:mt-10 max-md:max-w-full">
+            <div class="flex flex-wrap gap-6 gap-y-6 justify-between content-center items-center pt-8 w-full border-t border-solid border-t-gray-800 max-md:max-w-full">
+                <p class="self-stretch my-auto text-base text-black">© 2024 bckers, Inc. All rights reserved.</p>
+                <div class="flex gap-6 items-center self-stretch my-auto">
+                    <a href="#social" class="flex shrink-0 self-stretch my-auto w-6 h-6 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Social media links"></a>
+                    <a href="#social-media" aria-label="Social media" class="hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-blue-500"> <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9370606881716b8ae45b774345f7e35f167fb205cf19b7ff0234b69e7218367c?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="" class="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"/> </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</Layout>

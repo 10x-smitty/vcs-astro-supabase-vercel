@@ -34,9 +34,12 @@
               <div class="flex w-full bg-gray-200 fill-gray-200 min-h-[1px] max-md:max-w-full"></div>
             </div>
             <!--Replace with real data  -->
-                <div class="mt-3 text-base leading-6 text-blue-700 underline decoration-auto decoration-solid underline-offset-auto w-[480px] max-md:max-w-full" data-astro-source-file="/Users/jsmith/Desktop/vcindex_astro/visible-velocity/src/pages/dashboard.astro" data-astro-source-loc="79:186"> 
-                    <button class="text-left focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false" data-astro-source-file="/Users/jsmith/Desktop/vcindex_astro/visible-velocity/src/pages/dashboard.astro" data-astro-source-loc="80:145">
-                        <span class="line-clamp-3">{{ company.finalSummary.content }}</span><span class="font-bold text-blue-700 underline" data-astro-source-file="/Users/jsmith/Desktop/vcindex_astro/visible-velocity/src/pages/dashboard.astro" data-astro-source-loc="81:296">read more</span> 
+                <div class="mt-3 text-base leading-6 text-blue-700 w-[480px] max-md:max-w-full"> 
+                    <button class="text-left focus:outline-none focus:ring-2 focus:ring-blue-500" aria-expanded="false">
+                        <div class="relative">
+                            <span class="line-clamp-3 text-slate-600 break-normal">{{ company.finalSummary.content }}</span>
+                            <span class="font-bold text-blue-700 hover:text-blue-800">more</span>
+                        </div>
                     </button> 
                 </div>
             

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { getCompanyByUrlPath } from "../data/companies"; 
 import { supabase } from "../lib/supabase";
+import ScoreChart from "../components/ScoreChart.vue";
 
 // Get company data based on URL parameter
 const { company } = Astro.params;
@@ -84,17 +85,7 @@ if (!companyData) {
                                             <div class="flex-1 shrink w-full min-w-[240px]">Score</div>
                                         </div>
                                     </div>
-                                    <div class="flex relative flex-col justify-center items-center px-16 py-20 mt-3.5 max-w-full text-center min-h-[238px] w-[238px] max-md:px-5">
-                                        <div class="z-0">VI Score</div>
-                                        <div class="flex absolute bottom-1 top-6 z-0 flex-col self-start pb-6 w-full left-[13px] max-w-[210px] right-[15px]">
-                                            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/778e1a6efec88c6d42354d949c88d543d5ca739257034fdd172f17fef7b1f975?placeholderIfAbsent=true&apiKey=b9aac72cde80481fbc31d8b06e910272" alt="Score Graph" class="object-contain z-10 mt-0 w-full aspect-[1.34] max-md:-mr-1.5"/>
-                                            <div class="flex gap-5 justify-between mt-2">
-                                                <div>{companyData.vcScore.minScore}</div>
-                                                <div>{companyData.vcScore.maxScore}</div>
-                                            </div>
-                                        </div>
-                                        <div class="z-0 text-6xl tracking-tighter leading-none text-gray-900 max-md:text-4xl">{companyData.vcScore.score}</div>
-                                    </div>
+                                    <ScoreChart score={companyData.vcScore.score} client:load />
                                     <div class="flex flex-col justify-center mt-3.5 max-w-full text-xs font-normal leading-4 w-[280px]">
                                         <div>
                                             <span class="font-bold">Effectiveness:</span> {companyData.vcScore.metrics.effectiveness}
@@ -144,7 +135,7 @@ if (!companyData) {
                                             <div class="flex-1 shrink w-full min-w-[240px]">Metrics</div>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col gap-2 justify-center min-h-[285px] mt-12 pt-5 w-full max-md:mt-10">
+                                    <div class="flex flex-col gap-4 justify-center min-h-[285px] mt-12 pt-5 w-full max-md:mt-10">
                                         {Object.entries(companyData.vcMetrics).map(([key, value]) => (
                                             <div class="flex gap-4 items-start w-full">
                                                 <div class="flex flex-col flex-1 shrink w-full basis-0 min-w-[240px]">
