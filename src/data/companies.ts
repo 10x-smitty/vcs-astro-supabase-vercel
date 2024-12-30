@@ -162,7 +162,7 @@ export const mockCompanyData: Record<string, CompanyData> = {
     description:
       "Andreessen Horowitz is an early-stage venture capital firm focused on transformative technology investments across multiple global sectors.",
     vcScore: {
-      score: 780,
+      score: 439,
       minScore: 350,
       maxScore: 850,
       metrics: {

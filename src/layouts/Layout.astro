@@ -4,6 +4,7 @@ import UserMenu from '../components/UserMenu.vue';
 const accessToken = Astro.cookies.get("sb-access-token");
 const refreshToken = Astro.cookies.get("sb-refresh-token");
 
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <html lang="en">
@@ -12,6 +13,7 @@ const refreshToken = Astro.cookies.get("sb-refresh-token");
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <ClientRouter />
   </head>
   <body>
     <header class="bg-white shadow-sm border-b border-gray-200">
